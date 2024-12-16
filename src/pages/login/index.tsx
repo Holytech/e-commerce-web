@@ -1,6 +1,5 @@
 import image1 from "../../assets/image/phoe image.jpg";
 import { useForm } from "react-hook-form";
-import { SunspotLoader } from "react-awesome-loaders";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useState } from "react";
@@ -26,7 +25,6 @@ const Index = () => {
     console.log("Form Data Submitted:", data);
     setIsLoading(true);
 
-    
     setTimeout(() => {
       toast.success("Your information has been sent successfully!");
       reset({ email: "", password: "" });
@@ -87,15 +85,9 @@ const Index = () => {
             )}
           </div>
 
-         
           <div className="flex lg:space-x-28 items-center justify-center">
             {isLoading ? (
-              <SunspotLoader
-                gradientColors={["#FF0000", "#FF4D4D"]} // Red gradient
-                shadowColor={"#CC0000"} // Dark red shadow
-                desktopSize={"60px"}
-                mobileSize={"50px"}
-              />
+              <div className="text-center">Loading...</div> // Placeholder text for loading state
             ) : (
               <button
                 type="submit"
@@ -106,7 +98,7 @@ const Index = () => {
               </button>
             )}
             <div className="mb-3 ml-7">
-           <p className=" text-red-500"> forget password?</p>
+              <p className=" text-red-500">Forget password?</p>
             </div>
           </div>
         </form>

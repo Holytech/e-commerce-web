@@ -1,11 +1,9 @@
 import image1 from "../../assets/image/phoe image.jpg";
-import gmail from "../../assets/icons/Icon-Google.png";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useState } from "react";
-import { SunspotLoader } from "react-awesome-loaders";
 
 type FormData = {
   username: string;
@@ -67,7 +65,7 @@ const Index = () => {
             )}
           </div>
 
-         
+          {/* Email Field */}
           <div className="mb-4">
             <input
               type="email"
@@ -87,7 +85,7 @@ const Index = () => {
             )}
           </div>
 
-         
+          {/* Password Field */}
           <div className="mb-4">
             <input
               type="password"
@@ -107,25 +105,14 @@ const Index = () => {
             )}
           </div>
 
-         
-          <div className="flex lg:space-x-28 items-center justify-center">
-            {isLoading ? (
-              <SunspotLoader
-                gradientColors={["#FF0000", "#FF4D4D"]}
-                shadowColor={"#CC0000"}
-                desktopSize={"40px"}
-                mobileSize={"30px"}
-              />
-            ) : (
-              <button
-                type="submit"
-                className="w-full bg-red-500 text-white rounded-md p-2 mb-4"
-                disabled={!isValid} 
-              >
-                Create Account
-              </button>
-            )}
-          </div>
+          {/* Submit Button */}
+          <button
+            type="submit"
+            className="w-full bg-red-500 text-white rounded-md p-2 mb-4"
+            disabled={!isValid || isLoading} 
+          >
+            {isLoading ? "Creating Account..." : "Create Account"}
+          </button>
         </form>
 
         <p className="text-center text-sm text-gray-700">
