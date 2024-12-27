@@ -16,8 +16,8 @@ const Navbar = () => {
   }, [pathname]);
   return (
     <header>
-      <div className="bg-[#000] w-full py-3 px-4 flex flex-col md:flex-row md:justify-center gap-8 text-[#FAFAFA] text-sm">
-        <span className="font-thin">
+      <div className="bg-[#000] w-full py-3 px-5 flex flex-col md:flex-row md:justify-center gap-8 text-[#FAFAFA] text-sm">
+        <span className="font-thin text-center">
           Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!
         </span>
         <div className="w-full md:w-3/12 flex flex-row gap-20 justify-between">
@@ -34,7 +34,7 @@ const Navbar = () => {
           </select>
         </div>
       </div>
-      <div className="w-full max-w-[1200px] mx-auto">
+      <div className="w-full max-w-[1200px] mx-auto px-5">
         <div className="container-main hidden lg:flex flex-col md:flex-row md:items-center justify-between py-3">
           <Link to="/">
             <h1 className="font-bold capitalize text-2xl mb-4">exclusive</h1>
@@ -136,15 +136,29 @@ const Navbar = () => {
               </div>
               <div className="flex flex-col gap-8 text-white justify-between h-fit mb-[100px]">
                 <Link
-                  to="#"
+                  to="/"
                   className={`${
                     active === "/" ? "underline underline-offset-4" : ""
                   } cursor-pointer`}
                 >
                   Home
                 </Link>
-                <Link to="#">Contact</Link>
-                <Link to="#">About</Link>
+                <Link
+                  to="/contact"
+                  className={`${
+                    active === "/contact" ? "underline underline-offset-4" : ""
+                  } cursor-pointer`}
+                >
+                  Contact
+                </Link>
+                <Link
+                  to="/about"
+                  className={`${
+                    active === "/about" ? "underline underline-offset-4" : ""
+                  } cursor-pointer`}
+                >
+                  About
+                </Link>
                 <Link to="#">Sign Up</Link>
               </div>
               <div className="flex flex-row items-center gap-5">
