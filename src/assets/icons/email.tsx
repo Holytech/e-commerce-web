@@ -1,6 +1,6 @@
-import React from "react";
+import { IIcons } from "../../shared/types";
 
-const Email = ({ size, color }: { size: number; color: string }) => {
+const Email = ({ size }: IIcons) => {
   return (
     <svg
       width={size}

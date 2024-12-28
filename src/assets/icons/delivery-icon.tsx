@@ -1,4 +1,6 @@
-const DeliveryIcon = ({ size, color }: { size: number; color: string }) => {
+import { IIcons } from "../../shared/types";
+
+const DeliveryIcon = ({ size }: IIcons) => {
   return (
     <svg
       width={size}

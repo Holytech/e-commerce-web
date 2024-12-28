@@ -1,12 +1,12 @@
 import { Heart } from "lucide-react";
 import StarRating from "../single-product-card/star-rating";
-import { useState } from "react";
+
 export type CardType = {
-  id: string;
+  id?: string;
   img: string;
   name: string;
   star?: number;
-  color: string[];
+  color?: string[];
   isNew?: boolean;
   discountPrice?: string;
   isLiked?: boolean;
@@ -16,18 +16,16 @@ const SingleProduct: React.FC<CardType> = ({
   img,
   name,
   discountPrice,
-  id,
   star,
   isLiked = true,
   price,
-  color = [],
   isNew = false,
 }) => {
-  const [select, setSelected] = useState("");
+  // const [select, setSelected] = useState("");
 
-  const handleSelect = (item: string) => {
-    setSelected(item);
-  };
+  // const handleSelect = (item: string) => {
+  //   setSelected(item);
+  // };
 
   return (
     <div className="h-[322px] grid bg-[#F5F5F5]  items-center mx-auto relative group w-[270px]">

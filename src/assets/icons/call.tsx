@@ -1,4 +1,6 @@
-const Call = ({ size, color }: { size: number; color: string }) => {
+import { IIcons } from "../../shared/types";
+
+const Call = ({ size }: IIcons) => {
   return (
     <svg
       width={size}

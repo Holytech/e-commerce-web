@@ -1,14 +1,6 @@
-import React from "react";
+import { IIcons } from "../../shared/types";
 
-const DollarAboutIcon = ({
-  size,
-  color,
-  fillColor,
-}: {
-  size: number;
-  color: string;
-  fillColor: string;
-}) => {
+const DollarAboutIcon = ({ size, color, fillColor }: IIcons) => {
   return (
     <svg
       width={size}

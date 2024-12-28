@@ -17,3 +17,9 @@ export interface IProductCard {
   discountPercentage?: string | number;
   totalSold?: number;
 }
+
+export interface IIcons {
+  size?: number;
+  color?: string;
+  fillColor?: string;
+}

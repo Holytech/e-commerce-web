@@ -1,4 +1,6 @@
-const MoneyBack = ({ size }: { size: number }) => {
+import { IIcons } from "../../shared/types";
+
+const MoneyBack = ({ size }: IIcons) => {
   return (
     <svg
       width={size}

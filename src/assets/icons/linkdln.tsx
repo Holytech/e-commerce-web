@@ -1,4 +1,6 @@
-const Linkdln = ({ size }: { size: number }) => {
+import { IIcons } from "../../shared/types";
+
+const Linkdln = ({ size }: IIcons) => {
   return (
     <svg
       width={size}
