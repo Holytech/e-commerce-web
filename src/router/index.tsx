@@ -6,6 +6,7 @@ import Contact from "../pages/contact";
 import AppLayout from "../components/AppContainer";
 import LogIn from "../pages/login";
 import SignUp from "../pages/signUp";
+import AuthContainer from "../components/auth/AuthContainer";
 
 const routes: RouteObject[] = [
   {
@@ -18,8 +19,14 @@ const routes: RouteObject[] = [
       { path: "*", element: <NotFound /> },
     ],
   },
-  { path: "/auth/login", element: <LogIn /> },
-  { path: "/auth/signup", element: <SignUp /> },
+  {
+    path: "/auth",
+    element: <AuthContainer />,
+    children: [
+      { path: "/auth/login", element: <LogIn /> },
+      { path: "/auth/signup", element: <SignUp /> },
+    ],
+  },
 ];
 
 const router = createBrowserRouter(routes);
