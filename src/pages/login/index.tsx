@@ -1,4 +1,4 @@
-import image1 from "../../assets/image/phoe image.jpg";
+import image1 from "../../assets/images/phoe image.jpg";
 import { useForm } from "react-hook-form";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -9,14 +9,14 @@ type FormData = {
   password: string;
 };
 
-const Index = () => {
+const LogIn = () => {
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors, isValid },
   } = useForm<FormData>({
-    mode: "onChange", 
+    mode: "onChange",
   });
 
   const [isLoading, setIsLoading] = useState(false);
@@ -29,7 +29,7 @@ const Index = () => {
       toast.success("Your information has been sent successfully!");
       reset({ email: "", password: "" });
       setIsLoading(false);
-    }, 1000); 
+    }, 1000);
   };
 
   return (
@@ -45,7 +45,6 @@ const Index = () => {
         <p className="text-sm mb-4">Enter your details below</p>
 
         <form onSubmit={handleSubmit(onSubmit)}>
-         
           <div className="mb-4">
             <input
               type="email"
@@ -108,4 +107,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default LogIn;

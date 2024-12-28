@@ -64,7 +64,14 @@ const Navbar = () => {
             >
               About
             </Link>
-            <Link to="#">Sign Up</Link>
+            <Link
+              to="/auth/signup"
+              className={`${
+                active === "/auth/signup" ? "underline underline-offset-4" : ""
+              } cursor-pointer`}
+            >
+              Sign Up
+            </Link>
           </div>
           <div className="flex flex-row items-center gap-5">
             <div className="flex items-center border bg-[#F5F5F5] rounded-sm cursor-pointer px-2 gap-2">
@@ -159,7 +166,16 @@ const Navbar = () => {
                 >
                   About
                 </Link>
-                <Link to="#">Sign Up</Link>
+                <Link
+                  to="/auth/signup"
+                  className={`${
+                    active === "/auth/signup"
+                      ? "underline underline-offset-4"
+                      : ""
+                  } cursor-pointer`}
+                >
+                  Sign Up
+                </Link>
               </div>
               <div className="flex flex-row items-center gap-5">
                 <div className="flex items-center border bg-[#F5F5F5] rounded-sm cursor-pointer px-2 gap-2">

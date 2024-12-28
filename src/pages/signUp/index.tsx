@@ -1,4 +1,4 @@
-import image1 from "../../assets/image/phoe image.jpg";
+import image1 from "../../assets/images/phoe image.jpg";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { toast, ToastContainer } from "react-toastify";
@@ -11,14 +11,14 @@ type FormData = {
   password: string;
 };
 
-const Index = () => {
+const SignUp = () => {
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors, isValid },
   } = useForm<FormData>({
-    mode: "onChange", 
+    mode: "onChange",
   });
 
   const [isLoading, setIsLoading] = useState(false);
@@ -32,8 +32,8 @@ const Index = () => {
     setTimeout(() => {
       toast.success("Account created successfully!");
       reset();
-      setIsLoading(false); 
-    }, 2000); 
+      setIsLoading(false);
+    }, 2000);
   };
 
   return (
@@ -57,7 +57,7 @@ const Index = () => {
               className="w-full border-b border-gray-300 p-2 focus:outline-none bg-transparent"
               placeholder="Enter your username"
               {...register("username", {
-                required: "Username is required", 
+                required: "Username is required",
               })}
             />
             {errors.username && (
@@ -109,7 +109,7 @@ const Index = () => {
           <button
             type="submit"
             className="w-full bg-red-500 text-white rounded-md p-2 mb-4"
-            disabled={!isValid || isLoading} 
+            disabled={!isValid || isLoading}
           >
             {isLoading ? "Creating Account..." : "Create Account"}
           </button>
@@ -117,7 +117,7 @@ const Index = () => {
 
         <p className="text-center text-sm text-gray-700">
           Already have an account?{" "}
-          <Link to="/login" className="text-blue-500 hover:underline">
+          <Link to="/auth/login" className="text-blue-500 hover:underline">
             Login
           </Link>
         </p>
@@ -128,4 +128,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default SignUp;
