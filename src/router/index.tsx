@@ -4,7 +4,8 @@ import NotFound from "../pages/not-found";
 import About from "../pages/about";
 import Contact from "../pages/contact";
 import AppLayout from "../components/AppContainer";
-import SingleProductCard from "../components/common/single-product-card/single-product-card";
+import LogIn from "../pages/login";
+import SignUp from "../pages/signUp";
 
 const routes: RouteObject[] = [
   {
@@ -14,9 +15,11 @@ const routes: RouteObject[] = [
       { path: "/", element: <Home /> },
       { path: "/about", element: <About /> },
       { path: "/contact", element: <Contact /> },
-      { path: "*", element: <SingleProductCard /> },
+      { path: "*", element: <NotFound /> },
     ],
   },
+  { path: "/auth/login", element: <LogIn /> },
+  { path: "/auth/signup", element: <SignUp /> },
 ];
 
 const router = createBrowserRouter(routes);
