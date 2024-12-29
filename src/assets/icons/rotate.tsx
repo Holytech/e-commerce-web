@@ -1,4 +1,4 @@
-const Rotate = ({ size, color }: { size: number; color: string }) => {
+const Rotate = ({ size }: { size: number; color?: string }) => {
   return (
     <svg
       width={size}
