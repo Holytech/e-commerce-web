@@ -1,4 +1,4 @@
-const Call = ({ size, color }: { size: number; color: string }) => {
+const Call = ({ size }: { size: number; color?: string }) => {
   return (
     <svg
       width={size}
