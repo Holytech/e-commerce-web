@@ -1,6 +1,4 @@
-import React from "react";
-
-const Email = ({ size, color }: { size: number; color: string }) => {
+const Email = ({ size }: { size: number; color?: string }) => {
   return (
     <svg
       width={size}
