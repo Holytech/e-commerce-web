@@ -1,7 +1,15 @@
+import BrowseByCategory from "./browse-by-category";
+import FlashSale from "./flash-sale";
+import HomeSlider from "./home-slider";
+
 const Home = () => {
   return (
     <>
-      <div></div>
+      <div>
+        <HomeSlider />
+        <FlashSale />
+        <BrowseByCategory />
+      </div>
     </>
   );
 };
