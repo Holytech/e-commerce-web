@@ -20,7 +20,7 @@ const SingleProduct: React.FC<CardType> = ({
   star,
   isLiked = true,
   price,
-  color = [],
+
   isNew = false,
 }) => {
   const [select, setSelected] = useState("");
@@ -31,6 +31,7 @@ const SingleProduct: React.FC<CardType> = ({
 
   return (
     <div className="h-[322px] grid bg-[#F5F5F5]  items-center mx-auto relative group w-[270px]">
+      <p className="hidden">{select} </p>
       <img
         src={img}
         alt="Description"
@@ -45,6 +46,7 @@ const SingleProduct: React.FC<CardType> = ({
         </div>
       </div>
       <button
+        onClick={() => handleSelect(id)}
         type="submit"
         className="bg-black text-white text-center flex items-center justify-center py-2 rounded-none absolute w-full bottom-[110px] group-hover:bottom-[130px] capitalize  opacity-0 font-semibold   group-hover:opacity-100 group-hover:flex transition-all duration-500"
       >

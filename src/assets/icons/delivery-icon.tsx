@@ -1,4 +1,4 @@
-const DeliveryIcon = ({ size, color }: { size: number; color: string }) => {
+const DeliveryIcon = ({ size }: { size: number; color?: string }) => {
   return (
     <svg
       width={size}
