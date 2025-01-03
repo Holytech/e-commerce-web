@@ -1,12 +1,13 @@
-import { createBrowserRouter, RouteObject } from "react-router-dom"; 
-import Home from "../pages/home"; 
-import NotFound from "../pages/not-found"; 
-import About from "../pages/about"; 
-import Contact from "../pages/contact"; 
-import AppLayout from "../components/AppContainer"; 
-import SingleProductCard from "../components/common/single-product-card/single-product-card"; 
-import SignUp from "../pages/signUp"; // Import the SignUp component
-import Login from "../pages/login";   // Import the Login component
+import { createBrowserRouter, RouteObject } from "react-router-dom";
+import Home from "../pages/home";
+import NotFound from "../pages/not-found";
+import About from "../pages/about";
+import Contact from "../pages/contact";
+import AppLayout from "../components/AppContainer";
+import LogIn from "../pages/login";
+import SignUp from "../pages/signUp";
+import AuthContainer from "../components/auth/AuthContainer";
+import ForgetPassword from "../pages/forgetpassword";
 
 const routes: RouteObject[] = [
   {
@@ -16,9 +17,18 @@ const routes: RouteObject[] = [
       { path: "/", element: <Home /> },
       { path: "/about", element: <About /> },
       { path: "/contact", element: <Contact /> },
-      { path: "/signup", element: <SignUp /> }, // SignUp route
-      { path: "/login", element: <Login /> },   // Login route
-      { path: "*", element: <NotFound /> },    // Wildcard route
+    
+      { path: "*", element: <NotFound /> },
+    ],
+  },
+  {
+    path: "/auth",
+    element: <AuthContainer />,
+    children: [
+      { path: "/auth/login", element: <LogIn /> },
+      { path: "/auth/signup", element: <SignUp /> },
+      { path: "/auth/forgetpassword", element: <ForgetPassword /> },
+   
     ],
   },
 ];
