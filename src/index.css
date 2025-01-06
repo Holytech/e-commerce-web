@@ -4,8 +4,32 @@
 @tailwind components;
 @tailwind utilities;
 
-.header-404 {
-  font-size: 4rem;
-  text-align: center;
-  color: blue;
+.custom-dot-list-style {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  list-style: none;
+}
+
+.custom-dot-list-style li {
+  display: inline-block;
+  margin: 10px 0px;
+}
+
+.custom-dot-list-style li button {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: gray;
+  cursor: pointer;
+}
+
+.custom-dot-list-style li.react-multi-carousel-dot--active button {
+  background-color: red;
+  border: 1px solid white;
+  .header-404 {
+    font-size: 4rem;
+    text-align: center;
+    color: blue;
+  }
 }

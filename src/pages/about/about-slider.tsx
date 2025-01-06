@@ -1,42 +1,33 @@
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/pagination";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 import { sliderdata } from "../../shared/constants/about-constant";
 
 const AboutSlider = () => {
+  const responsive = {
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 3,
+      slidesToSlide: 3,
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 2,
+      slidesToSlide: 2,
+    },
+    mobile: {
+      breakpoint: { max: 700, min: 0 },
+      items: 1,
+      slidesToSlide: 1,
+    },
+  };
   return (
-    <Swiper
-      modules={[Navigation, Pagination, Scrollbar, A11y]}
-      spaceBetween={50}
-      slidesPerView={3}
-      navigation
-      pagination={{ clickable: true }}
-      scrollbar={{ draggable: true }}
-      onSwiper={(swiper) => console.log(swiper)}
-      onSlideChange={() => console.log("slide change")}
-      className="w-full"
-      breakpoints={{
-        320: {
-          slidesPerView: 1,
-        },
-        768: {
-          slidesPerView: 2,
-        },
-        1024: {
-          slidesPerView: 3,
-        },
-        1440: {
-          slidesPerView: 4,
-        },
-      }}
-    >
+    <Carousel responsive={responsive} showDots={true}>
       {sliderdata.map((item) => {
         const InstaIcon = item["insta-icon"];
         const LinkedInIcon = item["linkdln-icon"];
         const TwitterIcon = item["twitter-icon"];
         return (
-          <SwiperSlide key={item.id} className="w-[300px] h-[370px] ">
+          <div key={item.id} className="min-w-[300px] h-[370px] sm:ml-2">
             <img
               src={item.image}
               alt={item.name}
@@ -72,10 +63,10 @@ const AboutSlider = () => {
                 </a>
               </div>
             </div>
-          </SwiperSlide>
+          </div>
         );
       })}
-    </Swiper>
+    </Carousel>
   );
 };
 
