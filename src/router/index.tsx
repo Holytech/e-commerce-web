@@ -7,6 +7,7 @@ import AppLayout from "../components/AppContainer";
 import LogIn from "../pages/login";
 import SignUp from "../pages/signUp";
 import AuthContainer from "../components/auth/AuthContainer";
+import ForgetPassword from "../pages/forgetpassword";
 
 const routes: RouteObject[] = [
   {
@@ -16,6 +17,7 @@ const routes: RouteObject[] = [
       { path: "/", element: <Home /> },
       { path: "/about", element: <About /> },
       { path: "/contact", element: <Contact /> },
+    
       { path: "*", element: <NotFound /> },
     ],
   },
@@ -25,6 +27,8 @@ const routes: RouteObject[] = [
     children: [
       { path: "/auth/login", element: <LogIn /> },
       { path: "/auth/signup", element: <SignUp /> },
+      { path: "/auth/forgetpassword", element: <ForgetPassword /> },
+   
     ],
   },
 ];

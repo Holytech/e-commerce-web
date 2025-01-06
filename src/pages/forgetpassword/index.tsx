@@ -1,8 +1,8 @@
 import image1 from "../../assets/images/phoe image.jpg";
-import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Link } from "react-router-dom";
 import { useState } from "react";
 
 type FormData = {
@@ -42,8 +42,8 @@ const LogIn = () => {
       />
 
       <div className="lg:w-1/3 p-6 rounded-md mx-6 sm:w-full mt-7">
-        <h2 className="text-xl font-semibold mb-4">Log in to exclusive</h2>
-        <p className="text-sm mb-4">Enter your details below</p>
+        <h2 className="text-xl text-center font-semibold mb-4">Forget password?</h2>
+       
 
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="mb-4">
@@ -65,27 +65,9 @@ const LogIn = () => {
             )}
           </div>
 
-          {/* Password Field */}
-          <div className="mb-4">
-            <input
-              type="password"
-              id="password"
-              className="w-full border-b border-gray-300 p-2 focus:outline-none bg-transparent"
-              placeholder="Enter your password"
-              {...register("password", {
-                required: "Password is required",
-                minLength: {
-                  value: 6,
-                  message: "Password must be at least 6 characters long",
-                },
-              })}
-            />
-            {errors.password && (
-              <p className="text-sm text-red-500">{errors.password.message}</p>
-            )}
-          </div>
+          
 
-          <div className="flex lg:space-x-28 items-center justify-center">
+          <div className="flex lg:space-x-28 justify-between">
             {isLoading ? (
               <div className="text-center">Loading...</div> // Placeholder text for loading state
             ) : (
@@ -94,21 +76,18 @@ const LogIn = () => {
                 className="w-28 bg-red-500 text-white rounded-md p-2 mb-4"
                 disabled={!isValid} // Button disabled if form is not valid
               >
-                Login
+                Submit
               </button>
             )}
-            <div className="mb-3 ml-7">
-              <Link to= "/auth/forgetpassword">
-              <p className=" text-red-500">Forget password?</p>
-              </Link>
-              
+            <div>
+            <Link to="/auth/login" >
+            <p className="text-red-500 mr-6 mt-2 hover:underline">
+            Login  </p>
+          </Link>
             </div>
           </div>
-          <div>
-            <Link to="/auth/signup">
-            <p className=" text-red-500 text-center mt-2">Create New Account</p>
-            </Link>
-          </div>
+          
+          
         </form>
       </div>
       <ToastContainer />
