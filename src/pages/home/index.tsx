@@ -1,3 +1,6 @@
+import BrowseByCategory from "./browse-by-category";
+import FlashSale from "./flash-sale";
+import HomeSlider from "./home-slider";
 import CountDown from "../../components/common/CountDown";
 import Category from "./view/Category";
 import Featured from "./view/Featured";
@@ -8,7 +11,12 @@ import { ThisMonth } from "./view/ThisMonth";
 const Home = () => {
   return (
     <>
-      <div>Home</div>
+      <div>
+        <HomeSlider />
+        <FlashSale />
+        <BrowseByCategory />
+      </div>
+
       <ThisMonth />
       <Category />
       <CountDown />
