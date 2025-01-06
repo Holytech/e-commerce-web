@@ -1,10 +1,6 @@
-<<<<<<< HEAD
 import { IIcons } from "../../shared/types";
 
 const Email = ({ size }: IIcons) => {
-=======
-const Email = ({ size }: { size: number; color?: string }) => {
->>>>>>> 1b8f3a6d5b0fb276c101df424bdef1adb5144d51
   return (
     <svg
       width={size}
