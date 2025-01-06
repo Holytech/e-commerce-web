@@ -1,4 +1,6 @@
-const CustomerService = ({ size }: { size: number }) => {
+import { IIcons } from "../../shared/types";
+
+const CustomerService = ({ size }: IIcons) => {
   return (
     <svg
       width={size}

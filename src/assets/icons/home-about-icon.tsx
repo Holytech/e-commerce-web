@@ -1,12 +1,6 @@
-const HomeAboutIcon = ({
-  size,
-  color,
-  fillColor,
-}: {
-  size: number;
-  color: string;
-  fillColor: string;
-}) => {
+import { IIcons } from "../../shared/types";
+
+const HomeAboutIcon = ({ size, color, fillColor }: IIcons) => {
   return (
     <svg
       width={size}

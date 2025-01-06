@@ -1,12 +1,6 @@
-const ChartAboutIcon = ({
-  size,
-  color,
-  fillColor,
-}: {
-  size: number;
-  color: string;
-  fillColor: string;
-}) => {
+import { IIcons } from "../../shared/types";
+
+const ChartAboutIcon = ({ size, color, fillColor }: IIcons) => {
   return (
     <svg
       width={size}

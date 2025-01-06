@@ -1,4 +1,6 @@
-const Instagram = ({ size }: { size: number }) => {
+import { IIcons } from "../../shared/types";
+
+const Instagram = ({ size }: IIcons) => {
   return (
     <svg
       width={size}

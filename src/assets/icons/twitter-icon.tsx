@@ -1,4 +1,6 @@
-const TwitterIcon = ({ size }: { size: number }) => {
+import { IIcons } from "../../shared/types";
+
+const TwitterIcon = ({ size }: IIcons) => {
   return (
     <svg
       width={size}
