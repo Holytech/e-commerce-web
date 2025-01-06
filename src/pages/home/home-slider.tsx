@@ -1,6 +1,11 @@
 import { MdArrowForwardIos, MdArrowRightAlt } from "react-icons/md";
+<<<<<<< HEAD
 import iphone from "../../assets/images/iphone.png";
 import apple from "../../assets/images/apple_logo.png";
+=======
+import iphone from "../../../public/iphone.png";
+import apple from "../../../public/apple.png";
+>>>>>>> 1b8f3a6d5b0fb276c101df424bdef1adb5144d51
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
