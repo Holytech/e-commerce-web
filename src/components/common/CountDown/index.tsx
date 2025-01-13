@@ -26,7 +26,7 @@ const CountDown = () => {
       );
     } else {
       return (
-        <div className="flex flex-col text-white md:pl-[40px] :pr-[40px]  pt-[40px] gap-5 lg:gap-8  w-full">
+        <div className="flex flex-col text-white md:pl-[40px] :pr-[40px]  py-[40px] gap-5 lg:gap-8  w-full">
           <span className="text-[#15ad3d]  font-bold text-2xl  capitalize">
             categories
           </span>
@@ -36,8 +36,8 @@ const CountDown = () => {
           <div className="flex gap-6  md:gap-10 items-center">
             <CountDownSingle time={days} times="days" />
             <CountDownSingle time={hours} times="hours" />
-            <CountDownSingle time={minutes} times="minutes" />
-            <CountDownSingle time={seconds} times="seconds" />
+            <CountDownSingle time={minutes} times="mins" />
+            <CountDownSingle time={seconds} times="secs" />
           </div>
           <button className="lg:max-w-[200px] bg-[#15ad3d] hover:bg-green-700 text-xl py-4 text-white rounded-lg">
             Buy Now
@@ -61,7 +61,7 @@ const CountDown = () => {
 
         <img
           src={countdown}
-          className="w-full h-full object-contain  p-8  z-20 "
+          className="w-full h-full object-contain p-8 z-20 "
           alt=""
         />
       </div>
