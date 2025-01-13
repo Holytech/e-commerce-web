@@ -1,27 +1,19 @@
 import { useRef, useState } from "react";
-import CarouselControl from "./carousel-control";
 import { browseByCategoryData } from "./home-data";
+import { SectionHeader } from "./view/SectionHeader";
 
 const BrowseByCategory = () => {
   const sliderRef = useRef<HTMLDivElement | null>(null);
   const [selectCategory, setSelectCategory] = useState("1");
   return (
     <div className="grid  my-8">
-      <div className="">
-        <div className="flex gap-6 my-5">
-          <div className="w-2 h- bg-[#DB4444] rounded-sm " />
-          <h1 className="text-[#DB4444] font-[600]  ">Categories</h1>
-        </div>
-        <div className="flex gap-6 my-5 w-full justify-between items-center">
-          <h1 className="text-3xl font-[600]  ">Browse By Category</h1>
-          <div className="flex items-center gap-5">
-            <CarouselControl
-              sliderRef={sliderRef}
-              sliderType="categorySlider"
-            />
-          </div>
-        </div>
-      </div>
+      <SectionHeader
+        label="Categories"
+        title="Browse By Category"
+        slider={true}
+        sliderRef={sliderRef}
+        sliderType="categorySlider"
+      />
       <div
         className="flex w-full gap-5 overflow-x-scroll  my-5 scrollbar-hide "
         ref={sliderRef}

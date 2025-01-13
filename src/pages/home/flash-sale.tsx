@@ -1,8 +1,8 @@
+import { useRef } from "react";
 import Countdown from "react-countdown";
 import { productCard } from "./home-data";
 import SingleCard from "./singlecard";
-import { useRef } from "react";
-import CarouselControl from "./carousel-control";
+import { SectionHeader } from "./view/SectionHeader";
 
 const renderer = ({
   days,
@@ -55,23 +55,16 @@ const FlashSale = () => {
 
   return (
     <div className="my-4  grid border-b-[1px] border-[#000000]/20 pb-16">
-      <div className="flex gap-6 my-10">
-        <div className="w-2 h- bg-[#DB4444] rounded-sm " />
-        <h1 className="text-[#DB4444] font-[600]  ">Today’s</h1>
-      </div>
-      <div className="flex items-center w-full flex-col md:flex-row justify-between mb-10">
-        <div className="flex flex-[6] items-center gap-10 w-full ">
-          <h1 className="text-[#000000] font-[600] text-[30px] md:text-[36px]">
-            Flash Sales
-          </h1>
-          <Countdown date={oneWeekFromNow} renderer={renderer} />
-        </div>
-        <div className=" w-full  flex-[3]  flex md:items-center md:justify-center gap-5 ">
-          <CarouselControl sliderRef={sliderRef} sliderType="productSlider" />
-        </div>
-      </div>
+      <SectionHeader
+        label="Today's"
+        title="Flash Sales"
+        slider={true}
+        sliderRef={sliderRef}
+        sliderType="thisMonth"
+        timer={<Countdown date={oneWeekFromNow} renderer={renderer} />}
+      />
       <div
-        className="w-full overflow-x-scroll scrollbar-hide flex gap-6 "
+        className="w-full overflow-x-scroll scrollbar-hide flex gap-6 mt-10"
         ref={sliderRef}
       >
         {productCard.map((product, index) => (

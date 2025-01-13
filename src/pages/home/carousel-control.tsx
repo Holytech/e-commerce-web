@@ -5,8 +5,8 @@ const CarouselControl = ({
   sliderRef,
   sliderType,
 }: {
-  sliderRef: React.RefObject<HTMLDivElement>;
-  sliderType: "productSlider" | "categorySlider";
+  sliderRef?: React.RefObject<HTMLDivElement>;
+  sliderType?: "productSlider" | "categorySlider" | "thisMonth";
 }) => {
   const scrollSlider = (direction: "left" | "right") => {
     if (sliderRef?.current) {
@@ -19,6 +19,12 @@ const CarouselControl = ({
           });
           break;
         case "categorySlider":
+          sliderRef.current.scrollBy({
+            left: scrollAmount,
+            behavior: "smooth",
+          });
+          break;
+        case "thisMonth":
           sliderRef.current.scrollBy({
             left: scrollAmount,
             behavior: "smooth",
