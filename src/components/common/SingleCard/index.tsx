@@ -24,7 +24,7 @@ const SingleCard: React.FC<IProductCard> = ({
   return (
     <div
       key={id}
-      className="h-[322px] grid bg-[#F5F5F5]  items-center mx-auto relative group w-[270px]"
+      className="h-[322px] grid bg-[#F5F5F5]  items-center mx-auto relative group min-w-[200px] w-[270px]"
     >
       <img
         src={img}
